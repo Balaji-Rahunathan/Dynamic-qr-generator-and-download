@@ -1,12 +1,8 @@
-// Get the QR code container
-
-// Sample data
+// data
 const qrData = [
   'agr-1-111',
   'agr-2-111',
-  // 'charlie@example.com',
 ];
-
 
 async function generateQR() {
   // Loop through data and generate QR code for each item
@@ -32,26 +28,21 @@ async function generateQR() {
     });
 
     const qrCodeContainer = document.getElementById("container" + index);
-    printDiv2(qrCodeContainer)
+    printDiv2(qrCodeContainer,data)
   });
 }
 
-function printDiv2(div) {
+function printDiv2(div,name) {
   html2canvas(div).then(function (canvas) {
     var img = canvas.toDataURL();
-    downloadURI("data:" + img, "yourImage.png");
+    downloadURI("data:" + img, name+".png");
   });
 }
 function downloadURI(uri, name) {
   var link = document.createElement("a");
-  console.log(link)
   link.download = name;
   link.href = uri;
   link.click();
-  //after creating link you should delete dynamic link
-  // setTimeout(() => {
-  //   document.body.removeChild(link);
-  // }, 100);
 }
 
 generateQR()
