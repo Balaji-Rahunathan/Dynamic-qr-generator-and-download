@@ -1,0 +1,26 @@
+    body {
+      width: "100%";
+      height: "100%";
+      margin: 0;
+    }
+
+    /* Styles for the QR code container */
+    .qr-code-container {
+      display: flex;
+      width:1180px;
+      height:1680px;
+      background-image: url('/assets/Print-QR-A6.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    /* Styles for the QR code image */
+    .qrcode-image-container {
+      position: absolute;
+      left:287px;
+      top:619px;
+      width: 610px;
+      height: 610px;
+      background-color: "#fff9f2";
+    }
